@@ -2,14 +2,14 @@ import express from "express";
 import cors from "cors";
 import routes from "./routes/routes";
 import { connect, connection } from "mongoose";
-import { DB_CONNECTION_URI, PORT } from "./config/env";
+import { DB_CONNECTION_URI, PORT, FRONTEND_URL } from "./config/env";
 import cookieParser from "cookie-parser";
 
 const app = express();
 
 app.use(
 	cors({
-		origin: "http://localhost:3000",
+		origin: FRONTEND_URL,
 		credentials: true,
 	})
 );
